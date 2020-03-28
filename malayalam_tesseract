@@ -1,0 +1,46 @@
+
+
+import subprocess
+import os
+from tkinter import filedialog
+from tkinter import *
+import tkinter.messagebox as tkm
+
+
+a=Tk()
+a.geometry('1000x1000')
+
+
+def mfileopen():
+    file1=filedialog.askopenfile(filetypes = (("All files", "*.*"),("Template files", "*.tplate")
+                                                     ,("HTML files", "*.html;*.htm")))
+    os.system('cmd /k "python pdfToImage.py "'+ file1.name)
+    
+    
+    
+    
+    
+  #  os.system("tesseract.exe "+ file1.name +" outputPythonB -l eng")
+ 
+file=open("text.txt","r")
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+ch=file.read()
+Label(a, text=ch).pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+Label(a, text="                  ").pack()
+
+button=Button(text="open file",width=60 , command=mfileopen).pack()
+
+
+
+    
+a.mainloop()
